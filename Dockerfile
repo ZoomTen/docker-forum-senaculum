@@ -19,8 +19,6 @@ COPY senaculum /var/www/senaculum
 
 RUN mkdir -p /var/log/supervisord
 
-VOLUME [ "/var/www/senaculum/conf" ]
-
 EXPOSE 80
 WORKDIR /var/www
 
