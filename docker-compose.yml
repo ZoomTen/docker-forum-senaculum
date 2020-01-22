@@ -1,0 +1,43 @@
+version: '3'
+
+# server address: db
+# u/n : user
+# p/w : test
+# db name : forumSenaculum
+# prefix : sena_
+
+services:
+    db:
+        image: mariadb
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_DATABASE: forumSenaculum
+            MYSQL_USER: user
+            MYSQL_PASSWORD: test
+            MYSQL_ROOT_PASSWORD: test
+        volumes:
+            - persistence:/var/lib/mysql
+    web:
+        build: .
+        ports:
+            - 8080:80
+        depends_on:
+            - db
+        volumes:
+            - ./senaculum-data:/var/www/senaculum/conf
+        command: sh -c "chown -R nginx. /var/www && /usr/bin/supervisord -c /etc/supervisord.conf"
+
+    phpma:
+        image: phpmyadmin/phpmyadmin
+        depends_on:
+            - db
+        ports:
+            - 8081:80
+        environment:
+            PMA_HOST: db
+            MYSQL_USER: user
+            MYSQL_PASSWORD: test
+            MYSQL_ROOT_PASSWORD: test
+volumes:
+    persistence:
