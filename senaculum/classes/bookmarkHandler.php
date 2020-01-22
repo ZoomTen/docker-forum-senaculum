@@ -10,22 +10,22 @@
 
 require_once("dbHandler.php");
 class bookmarkHandler {
-	
+
 	function bookmarkHandler() {}
-	
+
 	function add($threadID) {
 		global $forumVariables;
 		if($forumVariables['inlogged']) {
 			$db = new dbHandler;
 			$threadID = $db->SQLsecure($threadID);
-			
+
 			//Get forumID
 			$sql = "SELECT forumID FROM _'pfx'_threads WHERE threadID = '".$threadID."'";
 			$result = $db->runSQL($sql);
 			if(!$row = $db->fetchArray($result))
 				return false;
 			$forumID = $row['forumID'];
-				
+
 			//Check if you have the right to see the thread, if not, you can't add that bookmark
 			require_once("permissionHandler.php");
 			$permission = new permissionHandler;
@@ -33,14 +33,14 @@ class bookmarkHandler {
 				$sql = "INSERT IGNORE INTO _'pfx'_bookmarks (memberID, threadID) VALUES('".$forumVariables['inloggedMemberID']."', '".$threadID."')";
 				$db->runSQL($sql);
 				return true;
-			}	
+			}
 			else
-				return false;	
+				return false;
 		}
 		else
 			return false;
 	}
-	
+
 	function remove($bookmarkID) {
 		global $forumVariables;
 		if($forumVariables['inlogged']) {
@@ -53,7 +53,7 @@ class bookmarkHandler {
 		else
 			return false;
 	}
-	
+
 	function getAll($sort,$start=0,$limit=false,$pageNum=1) {					//Lists threads
 		global $forumVariables;
 		global $forumSettings;
@@ -61,7 +61,7 @@ class bookmarkHandler {
 			$process = new process;
 			$threads = "";
 			$db = new dbHandler();				//Creates a databasehandler
-			
+
 			//SQL for fetch the threads and lastPost
 			$sqlThreads = "SELECT _'pfx'_bookmarks.bookmarkID, _'pfx'_threads.* ,_'pfx'_posts.postID, _'pfx'_posts.madeBy, _'pfx'_posts.lastEdit AS lastPostDate, _'pfx'_posts.guestName, _'pfx'_members.userName, m.userName AS threadOwnerUserName FROM _'pfx'_threads INNER JOIN _'pfx'_posts INNER JOIN _'pfx'_members INNER JOIN _'pfx'_members m INNER JOIN _'pfx'_bookmarks ON _'pfx'_threads.threadID = _'pfx'_posts.threadID ON _'pfx'_posts.madeBy = _'pfx'_members.memberID ON _'pfx'_threads.memberID = m.memberID ON _'pfx'_bookmarks.threadID = _'pfx'_threads.threadID WHERE _'pfx'_bookmarks.memberID = '".$forumVariables['inloggedMemberID']."' AND _'pfx'_threads.lastPost = _'pfx'_posts.postID AND _'pfx'_threads.type != 2 GROUP BY _'pfx'_threads.threadID ";
 			$sqlAnnounce = "SELECT _'pfx'_bookmarks.bookmarkID, _'pfx'_threads.* ,_'pfx'_posts.postID, _'pfx'_posts.madeBy, _'pfx'_posts.lastEdit AS lastPostDate, _'pfx'_posts.guestName, _'pfx'_members.userName, m.userName AS threadOwnerUserName FROM _'pfx'_threads INNER JOIN _'pfx'_posts INNER JOIN _'pfx'_members INNER JOIN _'pfx'_members m INNER JOIN _'pfx'_bookmarks ON _'pfx'_threads.threadID = _'pfx'_posts.threadID ON _'pfx'_posts.madeBy = _'pfx'_members.memberID ON _'pfx'_threads.memberID = m.memberID ON _'pfx'_bookmarks.threadID = _'pfx'_threads.threadID WHERE _'pfx'_bookmarks.memberID = '".$forumVariables['inloggedMemberID']."' AND _'pfx'_threads.lastPost = _'pfx'_posts.postID AND _'pfx'_threads.type = 2 GROUP BY _'pfx'_threads.threadID ";
@@ -94,7 +94,7 @@ class bookmarkHandler {
 			//die($sqlAnnounce);
 			$resultAnnounce = $db->runSQL($sqlAnnounce);
 			$numAnnounce = $db->numRows($resultAnnounce);
-			
+
 			if($limit) {
 				//Remove announce threads from the limit so the pagination will work
 				$start -= $numAnnounce * ($pageNum-1);
@@ -105,11 +105,11 @@ class bookmarkHandler {
 				$limit = $db->SQLsecure($limit);
 				$sqlThreads .= " LIMIT ".$start.", ".$limit;
 			}
-				
+
 			$resultThreads = $db->runSQL($sqlThreads);	//Runs the SQL
-			
+
 			$i = 0;						//Sets the conuntvariable to 0
-			
+
 			//Fetch announce threads
 			while($rowsThreads = $db->fetchArray($resultAnnounce)) { //Loops the table
 				$threads[$i]['bookmarkID'] = $rowsThreads['bookmarkID'];
@@ -132,14 +132,14 @@ class bookmarkHandler {
 				$threads[$i]['poll'] = $rowsThreads['poll'];
 				$threads[$i]['numAnnounce'] = $numAnnounce;
 				$threads[$i]['ownerGuestName'] = $rowsThreads['ownerGuestName'];
-				
+
 				$processHeadline[$i] = $threads[$i]['headline'];
 				$processOwnerGuestName[$i] = $threads[$i]['ownerGuestName'];
 				$processGuestName[$i] = $threads[$i]['lastPostGuestName'];
-				
+
 				$i++;							//Count the countvariable
 			}
-			
+
 			//Fetch the other threads
 			while($rowsThreads = $db->fetchArray($resultThreads)) { //Loops the table
 				$threads[$i]['bookmarkID'] = $rowsThreads['bookmarkID'];
@@ -162,11 +162,11 @@ class bookmarkHandler {
 				$threads[$i]['poll'] = $rowsThreads['poll'];
 				$threads[$i]['numAnnounce'] = $numAnnounce;
 				$threads[$i]['ownerGuestName'] = $rowsThreads['ownerGuestName'];
-				
+
 				$processHeadline[$i] = $threads[$i]['headline'];
 				$processOwnerGuestName[$i] = $threads[$i]['ownerGuestName'];
 				$processGuestName[$i] = $threads[$i]['lastPostGuestName'];
-				
+
 				$i++;							//Count the countvariable
 			}
 			if(!empty($threads)) {
@@ -190,7 +190,7 @@ class bookmarkHandler {
 					$sqlOwnThread = "SELECT _'pfx'_threads.threadID FROM _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_posts.madeBy = '".$forumVariables['inloggedMemberID']."' AND _'pfx'_threads.forumID = '".$forumID."' GROUP BY _'pfx'_threads.threadID";
 					$resultOwnThread = $db->runSQL($sqlOwnThread);
 					while($rowOwnThread = $db->fetchArray($resultOwnThread)) {
-						$ownThreads[] = $rowOwnThread['threadID']; 
+						$ownThreads[] = $rowOwnThread['threadID'];
 					}
 				}
 				$sqlNewPosts = "SELECT _'pfx'_threads.threadID, COUNT( _'pfx'_posts.postID ) AS newPosts FROM _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_posts.lastEdit >  '".$forumVariables['lastLoginDate']."' AND _'pfx'_threads.forumID = '".$forumID."' AND _'pfx'_posts.editedBy != '".$forumVariables['inloggedMemberID']."' GROUP BY _'pfx'_threads.threadID";
@@ -199,14 +199,14 @@ class bookmarkHandler {
 					$k = 0;
 					foreach($threads as $forumsElements) {
 						if($forumsElements['threadID'] == $rowNewPosts['threadID'])
-							$threads[$k]['newPosts'] = $rowNewPosts['newPosts'];	
-						$k++;	
+							$threads[$k]['newPosts'] = $rowNewPosts['newPosts'];
+						$k++;
 					}
 				}
 				$k = 0;
 				foreach($threads as $forumsElements) {
 					if(empty($threads[$k]['newPosts']))
-						$threads[$k]['newPosts'] = 0;	
+						$threads[$k]['newPosts'] = 0;
 					if(!empty($ownThreads) && in_array($threads[$k]['threadID'],$ownThreads))
 						$threads[$k]['ownPostsInThread'] = true;
 					else
@@ -217,10 +217,10 @@ class bookmarkHandler {
 								if($threads[$k]['newPosts'] != 0)
 									$threads[$k]['newPosts']--;
 							}
-						}		
-					}		
-					$k++;	
-				}	
+						}
+					}
+					$k++;
+				}
 			}
 			if(!empty($processHeadline))
 			{
@@ -230,7 +230,7 @@ class bookmarkHandler {
 					$threads[$k]['headline'] = $processHeadlineElement;
 					$k++;
 				}
-			} 
+			}
 			if(!empty($processOwnerGuestName))
 			{
 				$processOwnerGuestName = $process->name($processOwnerGuestName);
@@ -250,12 +250,12 @@ class bookmarkHandler {
 				}
 			}
 			if(!empty($threads))
-				return $threads; 				//Returns an two dimentional array 
+				return $threads; 				//Returns an two dimentional array
 		}
 		else
-			return false;		
+			return false;
 	}
-	
+
 	function countBookmarks() {
 		global $forumVariables;
 		if($forumVariables['inlogged']) {
@@ -265,7 +265,7 @@ class bookmarkHandler {
 			if($db->numRows($result) <= 0)
 				return false;
 			$row = $db->fetchArray($result);
-			return $row['bookmarks'];	
+			return $row['bookmarks'];
 		}
 		else
 			return false;
