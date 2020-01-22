@@ -1,0 +1,13 @@
+To change the logo image is simple.
+Open style.css in forum-root-directory. Search for the text .menuForumLogo
+Between this { and this } you can find background-image: 
+url('menu/default/logo.jpg');
+Change the url to that image you want to use as a image. Save the file and your new loggo is visable
+in the forum.
+ 
+If you don't want the image to repeat enter this value between { and }:
+background-repeat: no-repeat;
+When you do this it will be a white space in the right side of the logo. If you want to change color
+of that free space enter this between { and }:
+background-color: #000000;
+This code will make a black background in the logo box. 

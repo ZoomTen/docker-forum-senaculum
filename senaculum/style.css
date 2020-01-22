@@ -1,0 +1,2055 @@
+	/* Global classes */
+BODY {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: normal;
+}	
+.normalText {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: normal;
+}
+
+FORM {
+	padding: 0px;
+	margin: 0px;
+}
+A:link {color:#000000; text-decoration:none;}
+A:visited {color:#000000; text-decoration:none;}	
+A:hover {color:#666666; text-decoration:none;}	
+A:active {color:#000000; text-decoration:none;}
+
+A.bigLink:link {color: #000000;text-decoration:none; font-size:10pt; font-weight:bold;}
+A.bigLink:visited {color: #000000;text-decoration:none; font-size:10pt; font-weight:bold;}
+A.bigLink:hover {color: #666666;text-decoration:none; font-size:10pt; font-weight:bold;}
+A.bigLink:active {color: #000000;text-decoration:none; font-size:10pt; font-weight:bold;}
+
+A.link:link {color:#0000FF; text-decoration:none;}
+A.link:visited {color:#0000FF; text-decoration:none;}	
+A.link:hover {color:#6666FF; text-decoration:underline;}	
+A.link:active {color:#0000FF; text-decoration:none;}
+
+A.actionLink:link {color:#000000; text-decoration:none; border:1px none #999999; padding: 1px;}
+A.actionLink:visited {color:#000000; text-decoration:none; border:1px none #999999; padding: 1px;}	
+A.actionLink:hover {color:#666666; text-decoration:none; background-color:#FDF4DB; border:1px inset #999999; padding:1px;}	
+A.actionLink:active {color:#000000; text-decoration:none; border:1px none #999999; padding: 1px;}
+
+A.actionLink2:link {color: #222222;text-decoration:none; font-size:10pt; font-weight:bold;}
+A.actionLink2:visited {color: #000000;text-decoration:none; font-size:10pt; font-weight:bold;}
+A.actionLink2:hover {color: #CC9900;text-decoration:none; font-size:10pt; font-weight:bold;}
+A.actionLink2:active {color: #000000;text-decoration:none; font-size:10pt; font-weight:bold;}
+
+/*Forum list classes */
+
+.forumListHeadingForum {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+.forumListHeadingThreads {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+	border-left-style: none;
+}
+.forumListHeadingPosts {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+	border-left-style: none;
+}
+.forumListHeadingLastPost {
+	width: 110px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;	
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+}
+.forumListGroupHeading {
+	height: 25px;
+	background-image: url('images/styles/orangeHeadingBorder.gif');
+	background-color: #F6EDD6;
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	color: #000000;
+	font-size: 10pt;
+	text-align: left;
+	font-weight: bold;
+}
+
+.forumListStatus1 {
+	height: 45px;
+	width: 45px;
+	text-align: center;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.forumListForum1 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.forumListThreads1 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.forumListPosts1 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.forumListLastPost1 {
+	text-align: center;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.forumListStatus2 {
+	height: 45px;
+	width: 45px;
+	text-align: center;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.forumListForum2 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.forumListThreads2 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.forumListPosts2 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.forumListLastPost2 {
+	text-align: center;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}	
+
+/*Thread list classes */
+
+.threadListHeadingThread {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+.threadListHeadingReplies {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;	
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.threadListHeadingOwner {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;	
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.threadListHeadingLastPost {
+	width: 110px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;	
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;	
+}
+.threadListForumHeading {
+	height: 25px;
+	background-image: url('images/styles/orangeHeadingBorder2.gif');
+	background-color: #CCCCCC;
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.threadListForumHeadingName {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+}
+.threadListForumHeadingModerators {
+	text-align: left;
+	font-size: 8pt;
+	color: #000000;
+}
+.threadListForumHeadingNewThread {
+	width: 260px;
+	text-align: right;
+	font-size: 10pt;
+	color: #000000;
+}
+
+.threadListStatus1 {
+	width: 45px;
+	height: 34px;
+	text-align: center;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.threadListThread1 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.threadListReplies1 {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.threadListOwner1 {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.threadListLastPost1 {
+	width: 110px;
+	text-align: center;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.threadListStatus2 {
+	width: 45px;
+	height: 34px;
+	text-align: center;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.threadListThread2 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.threadListReplies2 {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}	
+.threadListOwner2 {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}	
+.threadListLastPost2 {
+	width: 110px;
+	text-align: center;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.threadListPaginate {
+	font-size: 7pt;
+}
+.threadListGoto {
+	font-size: 8pt;
+	font-weight: bold;
+	color: #666666;
+}
+.threadListPoll {
+	font-size: 8pt;
+	font-weight: bold;
+	color: #666666;
+}
+
+/* Bookmark list classes */
+
+.bookmarkListHeadingLastPost {
+	width: 110px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;	
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;	
+}
+
+.bookmarkListHeadingDelete {
+	width: 80px;
+	text-align: center;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;	
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+}
+
+.bookmarkListDelete1 {
+ 	width: 80px;
+	text-align: center;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.bookmarkListDelete2 {
+ 	width: 80px;
+	text-align: center;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+/* Post list classes */
+
+.postListHeadingPost {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+.postListHeadingAuthor {
+	width: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;	
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.postListThreadHeading {
+	height: 25px;
+	background-image: url('images/styles/orangeHeadingBorder2.gif');
+	background-color: #CCCCCC;
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.postListThreadHeadingName {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+}
+.postListThreadHeadingOwner {
+	text-align: left;
+	font-size: 8pt;
+	color: #000000;
+	font-weight: normal;
+}
+.postListThreadHeadingNewPost {
+	width: 310px;
+	text-align: right;
+	font-size: 10pt;
+	color: #000000;
+}
+
+.postListHeadingSubject {
+	color: #000000;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.postListHeadingPosted {
+	color: #000000;
+	font-size: 8pt;
+}
+.postListHeadingAnswer {
+	color: #000000;
+	font-size: 10pt;
+}			
+.postListAuthor1 {
+	width: 120px;
+	text-align: left;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #F6F6F6;
+	border-left-style: solid;
+	border-width: 1px;
+	border-color: #E6E6E6;
+}
+.postListHeading1 {
+	text-align: left;
+	height: 20px;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #E6E6E6;
+	border-bottom-style: solid;
+	border-color: #D6D6D6;
+	border-width: 2px;
+}
+.postListMessage1 {
+	height: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.postListSignature1 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.postListAuthor2 {
+	width: 120px;
+	text-align: left;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #EEEEEE;
+	border-left-style: solid;
+	border-width: 1px;
+	border-color: #DDDDDD;
+}
+.postListHeading2 {
+	text-align: left;
+	height: 20px;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #DDDDDD;
+	border-bottom-style: solid;
+	border-color: #CCCCCC;
+	border-width: 2px;
+}
+.postListMessage2 {
+	height: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}	
+.postListSignature2 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.postListThreadManagement {
+	font-size: 10pt;
+	padding: 2px;
+	background-color: #EEEEEE;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+
+.postListPollArea {
+	font-size: 10pt;
+	text-align: center;
+	padding: 4px;
+	background-color: #FCFCFC;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.postListPollOptions {
+	font-size: 10pt;
+}
+.postListAttachmentArea {
+	text-align: left;
+	padding: 0px;
+	padding-bottom: 5px;
+	padding-top: 10px;
+}
+.postListAttachmentTable {
+	width: 100%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #C9C9C9;
+	background-color: #EEEEEE;
+}
+.postListAttchmentLabel {
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #E3E3E3;
+	padding: 2px;
+}
+.postListAttachmentList1 {
+	font-size: 10pt;
+	background-color: #F3F3F3;
+	padding: 2px;
+	padding-left: 5px;
+}
+.postListAttachmentList2 {
+	font-size: 10pt;
+	background-color: #EEEEEE;
+	padding: 2px;
+	padding-left: 5px;
+}
+.postListFastAnswerArea {
+	text-align: left;
+	padding: 4px;
+	background-color: #F9F9F9;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.postListQuoteHeading {
+	margin:10px;
+	font-weight: bold;
+}
+.postListQuoteArea {
+	background-color: #EEEEEE; 
+	border: 1px solid #CCCCCC; 
+	padding: 3px;
+	font-weight: normal;
+}
+.postListGuest {
+	color: #006600;
+	font-size:10pt;
+	font-weight: bold;
+}
+.postListDeletedUser {
+	color: #999999;
+	font-size:10pt;
+	font-weight: bold;
+}
+.postListModerator {
+	color: #AA7700;
+	font-size:10pt;
+	font-weight: bold;
+}
+.postListAdmin {
+	color: #660000;
+	font-size:10pt;
+	font-weight: bold;
+}
+/* PM classes */
+
+.PMListHeadingPM {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+.PMListHeadingFrom {
+	width: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;	
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.PMListActionbox {
+	height: 25px;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder2.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.PMListChoseType {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;;
+}
+.PMListChoseTypeActive {
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.PMListSort {
+	text-align: right;
+	font-size: 10pt;
+	color: #000000;
+}
+.PMListSortDropdown1 {
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.PMListSortDropdown1 {
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.PMListNewPM {
+	width: 200px;
+	text-align: right;
+	font-size: 10pt;
+	color: #000000;
+}
+
+.PMListHeadingSubject {
+	color: #000000;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.PMListHeadingSent {
+	color: #000000;
+	font-size: 8pt;
+}
+.PMListHeadingAnswer {
+	color: #000000;
+	font-size: 10pt;
+}			
+.PMListFrom1 {
+	width: 120px;
+	text-align: left;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #F6F6F6;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #E6E6E6;
+	border-bottom-style: solid;
+	border-bottom-color: #E6E6E6;
+	border-bottom-width: 2px;
+}
+.PMListHeading1 {
+	text-align: left;
+	height: 20px;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+	border-bottom-style: solid;
+	border-color: #E6E6E6;
+	border-width: 2px;
+}
+.PMListMessage1 {
+	height: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.PMListSignature1 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.PMListFrom2 {
+	width: 120px;
+	text-align: left;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #EEEEEE;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #DDDDDD;
+	border-bottom-style: solid;
+	border-bottom-color: #DDDDDD;
+	border-bottom-width: 2px;
+}
+.PMListHeading2 {
+	text-align: left;
+	height: 20px;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+	border-bottom-style: solid;
+	border-color: #DDDDDD;
+	border-width: 2px;
+}
+.PMListMessage2 {
+	height: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.PMListSignature2 {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+	 
+/* Profile classes */
+
+.profileHeading {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+}
+
+.profileUsernameHeading {
+	height: 25px;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder2.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+}
+	 
+.profileInfoArea {
+	height: 200px;
+	background-color: #EEEEEE;
+}	
+.profileBoxes {
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #A16400;
+}
+.profileHeadings {
+	background-color: #000099;
+	color: #FFFFFF;
+	font-size: 10pt;
+	font-weight: bold;
+	border-bottom-style: solid;
+	border-color: #000066;
+	border-width: 2px;
+}
+.profileCaptionText {
+	font-size: 10pt;
+	font-weight: bold;
+	vertical-align: top;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.profileInfoText {
+	font-size: 10pt;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+
+.profileSelectDateFormat {
+	width:198px;
+	background-color:#FFFFFF;
+	display:none;
+	border:1px solid #CCCCCC;
+	border-top: none;
+}
+.profileSelectDateFormatElement {
+	font-weight:normal;
+	padding:1px;
+	padding-left:2px;
+	background-color:#FFFFFF;
+}
+.profileSelectDateFormatElementOver {
+	font-weight:normal;
+	padding:1px;
+	padding-left:2px;
+	background-color: #DDDDDD;
+}
+/* memberlist classes */
+
+.memberlistHeadingUsername {
+	width: 120px;
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+.memberlistHeadingPM {
+	width: 150px;
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberlistHeadingEmail {
+	width: 200px;
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberlistHeadingLocation {
+	width: 150px;
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberlistHeadingHomepage {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberlistHeadingPosts {
+	width: 60px;
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberlistHeadingAction {
+	width: 60px;
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+
+.memberlistCountMembersHeading {
+	height: 25px;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder2.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+}
+
+.memberlistItem1Username {
+	width: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberlistItem1PM {
+	width: 150px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberlistItem1Email {
+	width: 200px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberlistItem1Location {
+	width: 150px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberlistItem1Homepage {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberlistItem1Posts {
+	width: 60px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberlistItem1Action {
+	width: 60px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberlistItem2Username {
+	width: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberlistItem2PM {
+	width: 150px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberlistItem2Email {
+	width: 200px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberlistItem2Location {
+	width: 150px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberlistItem2Homepage {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberlistItem2Posts {
+	width: 60px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberlistItem2Action {
+	width: 60px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+
+/* search classes */
+
+.searchHeadingThread {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+.searchHeadingForum {
+	height: 25px;
+	width: 220px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.searchHeadingReplies {
+	height: 25px;
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.searchHeadingOwner {
+	height: 25px;
+	width: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.searchHeadingLastPost {
+	height: 25px;
+	width: 110px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+
+.searchHeadingSearch {
+	height: 25px;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder2.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+}
+.searchInputArea {
+	padding: 3px;
+	font-size: 10pt;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #DDDDDD;
+	text-align: left;
+}
+.searchViewHide {
+	padding: 3px;
+	font-size: 10pt;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-top-style: none;
+	border-width: 1px;
+	border-color: #DDDDDD;
+	text-align: center;
+}
+.searchItem1Status {
+	width: 45px;
+	height: 34px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.searchItem1Thread {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.searchItem1Forum {
+	width: 220px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.searchItem1Replies {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.searchItem1Owner {
+	width: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.searchItem1LastPost {
+	width: 110px;
+	text-align: center;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.searchItem2Status {
+	width: 45px;
+	height: 34px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.searchItem2Thread {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.searchItem2Forum {
+	width: 220px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.searchItem2Replies {
+	width: 80px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.searchItem2Owner {
+	width: 120px;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.searchItem2LastPost {
+	width: 110px;
+	text-align: center;
+	font-size: 8pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.searchThreadPaginate {
+	font-size: 8pt;
+}
+.searchThreadGoto {
+	font-size: 8pt;
+	font-weight: bold;
+	color: #666666;
+}
+.searchThreadFirstMatch {
+	font-size: 8pt;
+}
+.searchThreadFirstMatchLabel {
+	font-size: 8pt;
+	font-weight: bold;
+	color: #666666;
+}
+
+/* member group list classes */
+
+.memberGroupListHeadingGroup {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+.memberGroupListHeadingModerator {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberGroupListHeadingDescription {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberGroupListHeadingUserName {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+
+.memberGroupListHeadingPM {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberGroupListHeadingEmail {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberGroupListHeadingHomepage {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberGroupListHeadingLocation {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberGroupListHeadingAction {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+	border-right-style: none;
+}
+.memberGroupListHeadingGroupName {
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+	text-align: left;
+}
+.memberGroupListHeadingManage {
+	font-size: 10pt;
+	color: #000000;
+	text-align: right;
+}
+.memberGroupListHeadingCurrentModerator {
+	font-size: 8pt;
+	color: #000000;
+	font-weight: normal;
+}
+.memberGroupListHeading {
+	height: 25px;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+}
+
+.memberGroupListItem1Group {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberGroupListItem1Moderator {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberGroupListItem1Description {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+
+.memberGroupListItem1UserName {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberGroupListItem1Email {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberGroupListItem1PM{
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberGroupListItem1Location {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberGroupListItem1Homepage {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.memberGroupListItem1Action {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+
+.memberGroupListItem2Group {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberGroupListItem2Moderator {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberGroupListItem2Description {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+
+.memberGroupListItem2UserName {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberGroupListItem2Email {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberGroupListItem2PM {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberGroupListItem2Location {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberGroupListItem2Homepage {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.memberGroupListItem2Action {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+
+/* GeneralList classes */
+
+.generalListHeadingLeft {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+.generalListHeadingMiddle {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+	border-left-style: none;
+}
+.generalListHeadingRight {
+	height: 25px;
+	text-align: left;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-left-style: none;
+}
+.generalListInfoTextBar {
+	height: 25px;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder2.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+}
+.generalListInfoText {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+}
+.generalListInfoTextBarLinks {
+	text-align: right;
+	font-size: 10pt;
+	color: #000000;
+}
+.generalListGroupLeft {
+	height: 25px;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	border-right-style: none;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	font-weight: bold;
+}
+.generalListGroupMiddle {
+	height: 25px;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	border-left-style: none;
+	border-right-style: none;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+}
+.generalListGroupRight {
+	height: 25px;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	border-left-style: none;
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+}
+.generalListItem1Left {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.generalListItem1Middle {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.generalListItem1Right {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.generalListItem2Left {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.generalListItem2Middle {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.generalListItem2Right {
+	text-align: left;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+ 
+/*  Guide classes  */
+
+.guideHeading {
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	height: 25px;
+	max-height: 25px;
+	color: #FFFFFF;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: left;
+	background-color: #E5A800;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+
+.guideInfotext {
+	color: #000000;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+.guideBody {
+	background-color: #EEEEEE;
+	margin: 0px;
+	padding: 0px;
+}
+.guideBody2 {
+	background-color: #EEEEEE;
+}
+
+.guideBoxHeading {
+	font-size: 12pt;
+	font-weight: bold;
+}
+.guideInputArea {
+	background-color: #F9F9F9;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #A16400;
+	font-weight: normal;
+}
+.guideActionArea {
+	background-color: #F6F6F6;
+	border-top-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	padding-top: 3px;
+}
+.guideInputs {
+	font-size: 10pt;
+	font-weight: bold;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.guideInputsInset {
+	font-size: 10pt;
+	font-weight: bold;
+}
+.guideInputsInsetLeft {
+	font-size: 10pt;
+	font-weight: bold;
+	border-left-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+	padding-left: 4px;
+}
+.guideTextFields {
+	font-size: 10pt;
+	border: 1px solid #999999;
+}
+.guideDropDown {
+	font-size: 10pt;
+}
+.guideButton {
+	font-size: 10pt;
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999999;
+}
+.guideHelp {
+	height: 25px;
+	max-height: 25px;
+	font-size: 10pt;
+	background-color: #CCCCCC;
+	background-image: url('images/styles/orangeHeadingBorder2.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.guideEHelp {
+	font-weight: normal;
+	font-size: 10pt;
+	background-color: #F9F9F9;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #A16400;
+}
+.guideExample{
+	font-size: 10pt;
+	border-width: 1px;
+	border-style: solid;
+	width: 265px;
+	background-color: #FFFFFF;
+	border-color: #999999;
+}
+.guidePermissionHeading {
+	font-size: 10pt;
+	background-color: #BBBBBB;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	color: #000000;
+	font-weight: bold;
+	border-right-style: solid;
+	border-color: #EEEEEE;
+	border-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: #C38600;
+}
+.guidePermissionSet {
+	font-size: 10pt;
+	background-color: #EEEEEE;
+	color: #000000;
+	border-right-style: solid;
+	border-color: #DDDDDD;
+	border-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #BBBBBB;
+}
+.guidePermissionUnset {
+	font-size: 10pt;
+	background-color: #DDDDDD;
+	color: #000000;
+	border-right-style: solid;
+	border-color: #CCCCCC;
+	border-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #AAAAAA;
+}
+.guideAvatarBrowser {
+	font-size: 10pt;
+	font-weight: bold;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+
+.guideBBCodeInfo {
+	color: #333333;
+	font-size: 9pt;
+	font-weight: normal;
+	font-style: italic;
+}
+
+/* Error classes */
+
+.errorText {
+	color: #FF0000;
+	font-size: 10pt;
+} 
+
+.errorHeading {
+	height: 25px;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	border-color: #E0A000;
+	background-image: url('images/styles/orangeHeadingBorder3.gif');
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+	border-right-style: none;
+}
+
+/* Icons */
+.iconStatus {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIcon.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusOwn {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconWrote.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusNewPosts {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconNewPosts.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusNewPostsOwn {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconNewPostsWrote.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusLocked {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconLocked.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusLockedOwn {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconLockedWrote.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusLockedNewPosts {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconNewPostLocked.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusLockedNewPostsOwn {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconNewPostLockedWrote.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusSticky {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconSticky.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusStickyOwn {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconStickyWrote.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusStickyNewPosts {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconNewPostsSticky.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusStickyNewPostsOwn {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconNewPostsStickyWrote.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusAnnouncement {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconAnnouncement.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusAnnouncementOwn {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconAnnouncementWrote.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusAnnouncementNewPosts {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconNewPostsAnnouncement.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.iconStatusAnnouncementNewPostsOwn {
+	height: 100%;
+	width: 100%;
+	background-image: url('images/icons/statusIconNewPostsAnnouncementWrote.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/* Other classes */
+.pageViewAreaTop {
+	text-align: left;
+	padding: 2px;
+	background-color: #F9F9F9;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.pageViewAreaBottom {
+	text-align: left;
+	padding: 2px;
+	background-color: #F9F9F9;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.pageView {
+	padding: 2px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 9pt;
+	font-weight: bold;
+	white-space: nowrap;
+}
+.pageSort {
+	width: 200px;
+	text-align: right;
+	vertical-align: middle;
+	font-size: 10pt;
+	white-space: nowrap;
+}
+.pageGoto {
+	width: 300px;
+	padding: 2px;
+	text-align: right;
+	vertical-align: middle;
+	font-size: 9pt;
+	white-space: nowrap;
+}
+.pageDropDown {
+	border: 1px solid #DDDDDD;
+	width: 130px;
+}
+.pageDropDownOption1 {
+	font-size: 10pt;
+	color: #000000;
+	background-color: #F6F6F6;
+}
+.pageDropDownOption2 {
+	font-size: 10pt;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+
+.uploadAttachmentFilename {
+	size: 10pt;
+	font-weight: normal;
+	font-style: italic;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #CCCCCC;
+}
+.iconinfoIcon {
+	height: 45px;
+	width: 45px;
+}
+.iconinfoText {
+	font-size: 8pt;
+	vertical-align: middle;
+}	

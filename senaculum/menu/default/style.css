@@ -1,0 +1,144 @@
+/*Classes to the menu */
+BODY {
+	margin: 0px;
+	padding: 0px;
+}
+	
+.menuHeadingTable {
+	background-color: #E5A800;
+	background-image: url('../../images/styles/orangeHeadingBorder3.gif');
+	height: 25px;
+	border-style: outset;
+	border-width: 1px;
+	border-color: #E0A000;
+}
+.menuHeading {
+	font-size: 9pt;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+A.headingTextLink:link {color: #FFFFFF; text-decoration: none; font-size: 12pt;}
+A.headingTextLink:visited {color: #FFFFFF; text-decoration: none; font-size: 12pt;}	
+A.headingTextLink:hover {color: #FFCC00; text-decoration: none; font-size: 12pt;}	
+A.headingTextLink:active {color: #FFFFFF; text-decoration: none; font-size: 12pt;}	
+
+A.bestViewedLink:link {color: #AAAAAA; text-decoration:none;}
+A.bestViewedLink:visited {color: #AAAAAA; text-decoration:none;}	
+A.bestViewedLink:hover {color: #AAAAAA; text-decoration:underline;}	
+A.bestViewedLink:active {color: #AAAAAA; text-decoration:none;}	
+
+.menuTable {
+	height: 30px;
+	max-height: 30px;
+	background-color: #FDF4DB;
+	border-style: outset;
+	border-width: 1px;
+	border-color: #999999;
+}
+.menuHeadingForum {
+	color: #000000;
+	background-color: #FDF4DB;
+	width: 60px;
+	cursor: pointer;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FDF4DB;
+	font-size: 10pt;
+	text-align: center;
+}
+.menuHeadingAdmin {
+	color: #000000;
+	background-color: #FDF4DB;
+	width: 100px;
+	cursor: pointer;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FDF4DB;
+	font-size: 10pt;
+	text-align: center;
+}
+.menuHeadingGeneralAdmin {
+	color: #000000;
+	background-color: #FDF4DB;
+	width: 100px;
+	cursor: pointer;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FDF4DB;
+	font-size: 10pt;
+	text-align: center;
+}
+.menuLogin {
+	color: #000000;
+	font-size: 10pt;
+	text-align: right;
+	border-style: none;
+	border-width: 0px;
+}
+.menuPM {
+	width: 170px;
+	color: #000099;
+	font-size: 10pt;
+	text-align: center;
+	background-color: #FFFFFF;
+	border-style: outset;
+	border-width: 1px;
+	border-color: #999999;
+	/*filter: Alpha(opacity=70);
+	opacity: .7;*/
+}
+.menuLoginTextfeilds {
+	font-size: 10pt;
+	color: #000000;
+	border-style: inset;
+	border-width: 2px;
+	border-color: #CCCCCC;
+	width: 100px;
+	background-color: #EDE4CB;
+}		
+.menuTitle {
+	color: #333333;
+	font-size: 10px;
+	text-align: right;
+	width: 120px;
+}	
+.menuHeadingBox {
+	position: absolute;
+	color: #000000;
+	background-color: #FDF4DB;
+	/*layer-background-color: #FDF4DB;*/
+	width: 150px;
+	top: 49px;
+	left: 0px;
+	display: none;
+	border-style: outset;
+	border-width: 1px;
+	border-color: #FDF4DB;
+	font-size: 10pt;
+}
+.menuElement {
+	cursor: pointer;
+	font-size: 10pt;
+	color: #000000;
+	background-color: #FDF4DB;
+}
+.menuElementMouseOver {
+	cursor: pointer;
+	font-size: 10pt;
+	color: #FFFFFF;
+	background-color: #CC8800;
+}
+
+.menuForumLogo {
+	height: 100px;
+	text-align: left;
+	background-image: url('logo.jpg');
+}
+.menuBottomText {
+font-size: 8pt;
+color: #AAAAAA;
+text-align: center;
+}
+
+/*Menu classes end */
