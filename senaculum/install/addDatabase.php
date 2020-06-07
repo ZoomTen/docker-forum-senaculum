@@ -318,6 +318,10 @@ $sql = "CREATE TABLE `_'pfx'_bookmarks` (
 ) COMMENT='Store bookmarks';";
 $db->runSQL($sql);
 
+// Make indexes
+$sql = "ALTER TABLE `_'pfx'_members` ADD FULLTEXT(`userName`)";
+$db->runSQL($sql);
+
 //Insert the forum settings
 $sql = "INSERT INTO _'pfx'_settings (settingName, settingValue) VALUES ('forumName','".$db->SQLsecure($_POST['forumName'])."')";
 $db->runSQL($sql);
