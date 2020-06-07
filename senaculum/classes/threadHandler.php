@@ -127,7 +127,7 @@ class threadHandler {	//Handler the main thread functions
 			}
 		}
 
-		$sql = "SELECT _'pfx'_posts.date, _'pfx'_posts.postID, _'pfx'_threads.threadID FROM _'pfx'_forums INNER JOIN _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_forums.forumID = _'pfx'_threads.forumID ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumID."' AND _'pfx'_threads.threadID != '".$id."' ORDER BY _'pfx'_posts.date DESC LIMIT 1";
+		$sql = "SELECT _'pfx'_posts.date, _'pfx'_posts.postID, _'pfx'_threads.threadID FROM _'pfx'_forums INNER JOIN _'pfx'_threads ON _'pfx'_forums.forumID = _'pfx'_threads.forumID INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumID."' AND _'pfx'_threads.threadID != '".$id."' ORDER BY _'pfx'_posts.date DESC LIMIT 1";
 		$result = $db->runSQL($sql);
 		$row = $db->fetchObject($result);
 		$lastEdit = $row->date;
@@ -197,10 +197,21 @@ class threadHandler {	//Handler the main thread functions
     . "FROM _'pfx'_threads, _'pfx'_posts, _'pfx'_members\n"
     . "    WHERE (_'pfx'_threads.forumID = $forumID OR _'pfx'_threads.movedFromID = $forumID)\n"
     . "    AND _'pfx'_threads.lastPost = _'pfx'_posts.postID\n"
-    . "    AND _'pfx'_threads.type = 2\n"
+    . "    AND _'pfx'_threads.type != 2\n"
     . "GROUP BY _'pfx'_threads.threadID\n";
 
-    $sqlAnnounce = $sqlThreads;
+    $sqlAnnounce = "SELECT\n"
+    . "    _'pfx'_threads.*,\n"
+    . "    _'pfx'_posts.postID,\n"
+    . "    _'pfx'_posts.madeBy,\n"
+    . "    _'pfx'_posts.lastEdit AS lastPostDate,\n"
+    . "    _'pfx'_posts.guestName,\n"
+    . "    _'pfx'_members.userName\n"
+    . "FROM _'pfx'_threads, _'pfx'_posts, _'pfx'_members\n"
+    . "    WHERE (_'pfx'_threads.forumID = $forumID OR _'pfx'_threads.movedFromID = $forumID)\n"
+    . "    AND _'pfx'_threads.lastPost = _'pfx'_posts.postID\n"
+    . "    AND _'pfx'_threads.type = 2\n"
+    . "GROUP BY _'pfx'_threads.threadID\n";
 		//$sqlThreads = "SELECT _'pfx'_threads.* ,_'pfx'_posts.postID, _'pfx'_posts.madeBy, _'pfx'_posts.lastEdit AS lastPostDate, _'pfx'_posts.guestName, _'pfx'_members.userName, m.userName AS threadOwnerUserName FROM _'pfx'_threads INNER JOIN _'pfx'_posts INNER JOIN _'pfx'_members INNER JOIN _'pfx'_members m ON _'pfx'_threads.threadID = _'pfx'_posts.threadID ON _'pfx'_posts.madeBy = _'pfx'_members.memberID ON _'pfx'_threads.memberID = m.memberID WHERE (_'pfx'_threads.forumID = '".$forumID."' OR _'pfx'_threads.movedFromID = '".$forumID."') AND _'pfx'_threads.lastPost = _'pfx'_posts.postID AND _'pfx'_threads.type != 2 GROUP BY _'pfx'_threads.threadID ";
 		//$sqlAnnounce = "SELECT _'pfx'_threads.* ,_'pfx'_posts.postID, _'pfx'_posts.madeBy, _'pfx'_posts.lastEdit AS lastPostDate, _'pfx'_posts.guestName, _'pfx'_members.userName, m.userName AS threadOwnerUserName FROM _'pfx'_threads INNER JOIN _'pfx'_posts INNER JOIN _'pfx'_members INNER JOIN _'pfx'_members m ON _'pfx'_threads.threadID = _'pfx'_posts.threadID ON _'pfx'_posts.madeBy = _'pfx'_members.memberID ON _'pfx'_threads.memberID = m.memberID WHERE (_'pfx'_threads.forumID = '".$forumID."' OR _'pfx'_threads.movedFromID = '".$forumID."') AND _'pfx'_threads.lastPost = _'pfx'_posts.postID AND _'pfx'_threads.type = 2 GROUP BY _'pfx'_threads.threadID ";
 		switch($sort) {
@@ -396,7 +407,7 @@ class threadHandler {	//Handler the main thread functions
 		$thread = "";
 		$db = new dbHandler();						//Makes databasehandler to db
 		$threadID = $db->SQLsecure($threadID);
-		$sql = "SELECT _'pfx'_threads.*, _'pfx'_forums.name, _'pfx'_forumGroups.*, _'pfx'_members.userName FROM _'pfx'_threads INNER JOIN _'pfx'_forums INNER JOIN _'pfx'_forumGroups INNER JOIN _'pfx'_members ON _'pfx'_threads.forumID = _'pfx'_forums.forumID ON _'pfx'_forums.groupID = _'pfx'_forumGroups.groupID ON _'pfx'_threads.memberID = _'pfx'_members.memberID WHERE threadID='".$threadID."'";	//SQL-code that fetch the thread data
+		$sql = "SELECT _'pfx'_threads.*, _'pfx'_forums.name, _'pfx'_forumGroups.*, _'pfx'_members.userName FROM _'pfx'_threads INNER JOIN _'pfx'_forums ON _'pfx'_threads.forumID = _'pfx'_forums.forumID INNER JOIN _'pfx'_forumGroups ON _'pfx'_forums.groupID = _'pfx'_forumGroups.groupID INNER JOIN _'pfx'_members ON _'pfx'_threads.memberID = _'pfx'_members.memberID WHERE threadID='".$threadID."'";	//SQL-code that fetch the thread data
 		$result = $db->runSQL($sql);					//Run the SQL-code
 		if($db->numRows($result) <= 0)
 			return $thread;
@@ -610,7 +621,7 @@ class threadHandler {	//Handler the main thread functions
 			$sql = "UPDATE _'pfx'_threads SET forumID = '".$forumIDTo."' WHERE threadID = '".$threadID."'";
 		$db->runSQL($sql);
 
-		$sql = "SELECT _'pfx'_forums.forumID, count(_'pfx'_posts.postID) AS posts FROM _'pfx'_forums INNER JOIN _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_forums.forumID = _'pfx'_threads.forumID OR _'pfx'_forums.forumID = _'pfx'_threads.movedFromID ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumIDTo."' OR _'pfx'_forums.forumID = '".$forumIDFrom."' GROUP BY _'pfx'_forums.forumID";
+		$sql = "SELECT _'pfx'_forums.forumID, count(_'pfx'_posts.postID) AS posts FROM _'pfx'_forums INNER JOIN _'pfx'_threads ON _'pfx'_forums.forumID = _'pfx'_threads.forumID OR _'pfx'_forums.forumID = _'pfx'_threads.movedFromID INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumIDTo."' OR _'pfx'_forums.forumID = '".$forumIDFrom."' GROUP BY _'pfx'_forums.forumID";
 		$result = $db->runSQL($sql);
 		while($row = $db->fetchArray($result)) {
 			$sql = "UPDATE _'pfx'_forums SET posts = '".$row['posts']."' WHERE forumID = '".$row['forumID']."'";
@@ -624,7 +635,7 @@ class threadHandler {	//Handler the main thread functions
 			$db->runSQL($sql);
 		}
 
-		$sql = "SELECT _'pfx'_forums.forumID, MAX(_'pfx'_posts.lastEdit) AS lastEdit, _'pfx'_posts.postID FROM _'pfx'_forums INNER JOIN _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_forums.forumID = _'pfx'_threads.forumID ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumIDTo."' OR _'pfx'_forums.forumID = '".$forumIDFrom."' GROUP BY _'pfx'_forums.forumID";
+		$sql = "SELECT _'pfx'_forums.forumID, MAX(_'pfx'_posts.lastEdit) AS lastEdit, _'pfx'_posts.postID FROM _'pfx'_forums INNER JOIN _'pfx'_threads ON _'pfx'_forums.forumID = _'pfx'_threads.forumID INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumIDTo."' OR _'pfx'_forums.forumID = '".$forumIDFrom."' GROUP BY _'pfx'_forums.forumID";
 		$result = $db->runSQL($sql);
 		while($row = $db->fetchArray($result)) {
 			$sql = "UPDATE _'pfx'_forums SET lastEdit = '".$row['lastEdit']."', lastPost = '".$row['postID']."' WHERE forumID = '".$row['forumID']."'";
@@ -670,7 +681,7 @@ class threadHandler {	//Handler the main thread functions
 					$sql = "UPDATE _'pfx'_forums SET threads = threads-".count($rows)." WHERE forumID = '".$forumIDFrom."'";
 					$db->runSQL($sql);
 
-					$sql = "SELECT _'pfx'_forums.forumID, MAX(_'pfx'_posts.lastEdit) AS lastEdit, _'pfx'_posts.postID FROM _'pfx'_forums INNER JOIN _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_forums.forumID = _'pfx'_threads.forumID ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumIDTo."' OR _'pfx'_forums.forumID = '".$forumIDFrom."' GROUP BY _'pfx'_forums.forumID";
+					$sql = "SELECT _'pfx'_forums.forumID, MAX(_'pfx'_posts.lastEdit) AS lastEdit, _'pfx'_posts.postID FROM _'pfx'_forums INNER JOIN _'pfx'_threads ON _'pfx'_forums.forumID = _'pfx'_threads.forumID INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumIDTo."' OR _'pfx'_forums.forumID = '".$forumIDFrom."' GROUP BY _'pfx'_forums.forumID";
 					$result = $db->runSQL($sql);
 					while($row = $db->fetchArray($result)) {
 						$sql = "UPDATE _'pfx'_forums SET lastEdit = '".$row['lastEdit']."', lastPost = '".$row['postID']."' WHERE forumID = '".$row['forumID']."'";

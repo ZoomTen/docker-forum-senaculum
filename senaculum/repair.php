@@ -18,14 +18,14 @@ while($row = $db->fetchArray($result)) {
 	$db->runSQL($sql);
 } 
 
-$sql = "SELECT _'pfx'_forums.forumID, MAX(_'pfx'_posts.lastEdit) AS lastEdit, _'pfx'_posts.postID FROM _'pfx'_forums INNER JOIN _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_forums.forumID = _'pfx'_threads.forumID ON _'pfx'_threads.threadID = _'pfx'_posts.threadID GROUP BY _'pfx'_forums.forumID";
+$sql = "SELECT _'pfx'_forums.forumID, MAX(_'pfx'_posts.lastEdit) AS lastEdit, _'pfx'_posts.postID FROM _'pfx'_forums INNER JOIN _'pfx'_threads ON _'pfx'_forums.forumID = _'pfx'_threads.forumID INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID GROUP BY _'pfx'_forums.forumID";
 $result = $db->runSQL($sql);
 while($row = $db->fetchArray($result)) {
 	$sql = "UPDATE _'pfx'_forums SET lastEdit = '".$row['lastEdit']."', lastPost = '".$row['postID']."' WHERE forumID = '".$row['forumID']."'";
 	$db->runSQL($sql);
 }
 */
-$sql = "SELECT _'pfx'_forums.forumID, count(_'pfx'_posts.postID) AS posts FROM _'pfx'_forums INNER JOIN _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_forums.forumID = _'pfx'_threads.forumID OR _'pfx'_forums.forumID = _'pfx'_threads.movedFromID ON _'pfx'_threads.threadID = _'pfx'_posts.threadID GROUP BY _'pfx'_forums.forumID";
+$sql = "SELECT _'pfx'_forums.forumID, count(_'pfx'_posts.postID) AS posts FROM _'pfx'_forums INNER JOIN _'pfx'_threads _'pfx'_forums.forumID = _'pfx'_threads.forumID OR _'pfx'_forums.forumID = _'pfx'_threads.movedFromID INNER JOIN _'pfx'_posts ON  _'pfx'_threads.threadID = _'pfx'_posts.threadID GROUP BY _'pfx'_forums.forumID";
 $result = $db->runSQL($sql);
 while($row = $db->fetchArray($result)) {
 	$sql = "UPDATE _'pfx'_forums SET posts = '".$row['posts']."' WHERE forumID = '".$row['forumID']."'";

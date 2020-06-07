@@ -92,7 +92,7 @@ class moderatorHandler {
 			}
 		}
 
-		$sql = "SELECT _'pfx'_forums.forumID, _'pfx'_forums.name FROM _'pfx'_memberGroupsRelation INNER JOIN _'pfx'_memberGroupPermissions INNER JOIN _'pfx'_forums ON _'pfx'_memberGroupPermissions.memberGroupID = _'pfx'_memberGroupsRelation.groupID ON _'pfx'_memberGroupPermissions.forumID = _'pfx'_forums.forumID WHERE _'pfx'_memberGroupsRelation.memberID = '".$memberID."' AND _'pfx'_memberGroupPermissions.moderator = 1";
+		$sql = "SELECT _'pfx'_forums.forumID, _'pfx'_forums.name FROM _'pfx'_memberGroupsRelation INNER JOIN _'pfx'_memberGroupPermissions ON _'pfx'_memberGroupPermissions.memberGroupID = _'pfx'_memberGroupsRelation.groupID INNER JOIN _'pfx'_forums ON _'pfx'_memberGroupPermissions.forumID = _'pfx'_forums.forumID WHERE _'pfx'_memberGroupsRelation.memberID = '".$memberID."' AND _'pfx'_memberGroupPermissions.moderator = 1";
 		$result = $db->runSQL($sql);
 		if($db->numRows($result) > 0) {
 			while($row = $db->fetchArray($result)) {

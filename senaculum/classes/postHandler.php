@@ -95,7 +95,7 @@ class postHandler {	//Handler the main post functions
 		$lastEdit = $row->date;
 		$lastPost = $row->postID;
 		
-		$sql = "SELECT _'pfx'_posts.lastEdit, _'pfx'_posts.postID FROM _'pfx'_forums INNER JOIN _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_forums.forumID = _'pfx'_threads.forumID ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumID."' AND _'pfx'_posts.postID != '".$postID."' ORDER BY _'pfx'_posts.lastEdit DESC LIMIT 1";
+		$sql = "SELECT _'pfx'_posts.lastEdit, _'pfx'_posts.postID FROM _'pfx'_forums INNER JOIN _'pfx'_threads ON _'pfx'_forums.forumID = _'pfx'_threads.forumID INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_forums.forumID = '".$forumID."' AND _'pfx'_posts.postID != '".$postID."' ORDER BY _'pfx'_posts.lastEdit DESC LIMIT 1";
 		$result = $db->runSQL($sql);
 		$row = $db->fetchObject($result);
 		$lastEditForum = $row->date;

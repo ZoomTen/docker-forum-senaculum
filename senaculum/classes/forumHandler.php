@@ -167,7 +167,7 @@ class forumHandler {	//Handler the main forum functions
 					$k++;
 				}
 			}
-			$sqlNewPosts = "SELECT _'pfx'_forums.forumID, _'pfx'_forums.groupID, _'pfx'_forums.sort, COUNT( _'pfx'_posts.postID ) AS newPosts FROM _'pfx'_forums INNER JOIN _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_forums.forumID = _'pfx'_threads.forumID ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_posts.lastEdit >  '".$forumVariables['lastLoginDate']."' AND _'pfx'_posts.editedBy != '".$forumVariables['inloggedMemberID']."' GROUP BY _'pfx'_forums.forumID";
+			$sqlNewPosts = "SELECT _'pfx'_forums.forumID, _'pfx'_forums.groupID, _'pfx'_forums.sort, COUNT( _'pfx'_posts.postID ) AS newPosts FROM _'pfx'_forums INNER JOIN _'pfx'_threads ON _'pfx'_forums.forumID = _'pfx'_threads.forumID INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_posts.lastEdit >  '".$forumVariables['lastLoginDate']."' AND _'pfx'_posts.editedBy != '".$forumVariables['inloggedMemberID']."' GROUP BY _'pfx'_forums.forumID";
 			//die($sqlNewPosts);
 			$resultNewPosts = $db->runSQL($sqlNewPosts);
 			while($rowNewPosts = $db->fetchArray($resultNewPosts)) {
@@ -308,7 +308,7 @@ class forumHandler {	//Handler the main forum functions
 			return false;
 		
 		if($forumVariables['inlogged']) {
-			$sqlNewPosts = "SELECT _'pfx'_forums.forumID, COUNT( _'pfx'_posts.postID ) AS newPosts FROM _'pfx'_forums INNER JOIN _'pfx'_threads INNER JOIN _'pfx'_posts ON _'pfx'_forums.forumID = _'pfx'_threads.forumID ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_posts.lastEdit > '".$forumVariables['lastLoginDate']."' AND _'pfx'_posts.editedBy != '".$forumVariables['inloggedMemberID']."' GROUP BY _'pfx'_forums.forumID";
+			$sqlNewPosts = "SELECT _'pfx'_forums.forumID, COUNT( _'pfx'_posts.postID ) AS newPosts FROM _'pfx'_forums INNER JOIN _'pfx'_threads ON _'pfx'_forums.forumID = _'pfx'_threads.forumID INNER JOIN _'pfx'_posts ON _'pfx'_threads.threadID = _'pfx'_posts.threadID WHERE _'pfx'_posts.lastEdit > '".$forumVariables['lastLoginDate']."' AND _'pfx'_posts.editedBy != '".$forumVariables['inloggedMemberID']."' GROUP BY _'pfx'_forums.forumID";
 			$resultNewPosts = $db->runSQL($sqlNewPosts);
 			while($rowNewPosts = $db->fetchArray($resultNewPosts)) {
 				$k = 0;

@@ -36,8 +36,10 @@ $limit = $forumSettings['threadsPerPage'];
 $startRow = ($pageNum - 1) * $limit;
 
 if(isset($_GET['id'])) {
-	if($_GET['markRead'] && $forumVariables['inlogged'] && $forumSettings['smartNewPosts']) {
-		$thread->markAllAsRead($_GET['id']);
+        if(isset($_GET['markRead'])){
+	        if($_GET['markRead'] && $forumVariables['inlogged'] && $forumSettings['smartNewPosts']) {
+	        	$thread->markAllAsRead($_GET['id']);
+	        }
 	}
 
 	$menu->getTop();
