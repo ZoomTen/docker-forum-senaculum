@@ -36,10 +36,10 @@ class dbHandler	//Manage the database functions
 		global $dbConnection;
 		$error = new errorHandler;
 		require("./conf/conf.php");	
-		
+		$prev_SQL = $SQL;
 		$SQL = str_replace("_'pfx'_",$dbTablePrefix,$SQL);				//Input tableprefixes to tablenames in the SQL-code
 		  
-		$result = mysql_query($SQL) or $error->error($lang['mySQLError'],$lang['couldNotRunSQL1'].mysql_error().$lang['couldNotRunSQL2'].$SQL);				//Runs the SQL-comman
+		$result = mysql_query($SQL) or $error->error($lang['mySQLError'],$lang['couldNotRunSQL1'].'Original query: '.$prev_SQL.'<br><br>'.mysql_error().$lang['couldNotRunSQL2'].$SQL);				//Runs the SQL-comman
 		global $dbLastID; 
 		$dbLastID = mysql_insert_id($dbConnection);
 
